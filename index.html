@@ -5,10 +5,113 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/index.min.css">
+    <style>
+         @import url(https://fonts.googleapis.com/css?family=Luckiest+Guy);
+
+        * {
+        margin: 0;
+        padding: 0;
+        }
+
+        body{
+            background-color: black;
+            text-align: center;
+            /* padding-top:20em; */
+        }
+
+        h1{
+          padding-top:10em;
+        }
+
+        .typewrite{
+            font-size: 80px;
+        }
+
+        .clickBtn{
+          font-size: 80px;
+        }
+
+        canvas {
+          display: block;
+        }
+
+        .swiper {
+          width: 900px;
+          height: 700px;
+        }
+
+        .swiper-wrapper{
+          color: white
+        }
+
+        .swiper-button-prev, .swiper-button-next{
+          color: #93c23a
+        }
+
+        .swiper-pagination-bullet{
+          background: white
+        }
+        .swiper-pagination-bullet-active{
+          background: #93c23a
+        }
+
+        /* flip card */
+        .flip-card {
+          background-color: transparent;
+          width: 100%;
+          height: 100%;
+        }
+
+        .flip-card-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          transition: transform 0.8s;
+          transform-style: preserve-3d;
+        }
+
+        /* 水平翻轉 */
+        .flip-card:hover .flip-card-inner {
+          transform: rotateY(180deg);
+        }
+
+        /* Position the front and back side */
+        .flip-card-front, .flip-card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+        }
+
+        /* 前面 */
+        .flip-card-front {
+          background-color: #fff;
+          color: black;
+        }
+
+        /* 背面 */
+        .flip-card-back {
+          background-color: #fff;
+          color: white;
+          transform: rotateY(180deg);
+        }
+    </style>
 </head>
 <body>
-    <p>must I have a index?
-    </p>
-    
+    <h1>
+        <a href="" class="typewrite" data-period="2000" data-type='[ "身為前端工程師們", "我們覺得寫卡片實在是太 Low 了", "於是我們決定..." ]'>
+          <span class="wrap"></span>
+        </a>
+    </h1>
+    <canvas id="canv"></canvas>
+
+    <!-- Slider main container -->
+
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
