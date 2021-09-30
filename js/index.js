@@ -1,7 +1,10 @@
-var audio = new Audio("/assert/index.mp3");
+var audio = new Audio("./assert/index.mp3");
+var audioTyping = new Audio('./assert/typing.mp3')
+var audioFirework = new Audio('./assert/firework.mp3')
 var isPlaying = false;
 
 function typing() {
+  typingSound()
   var TxtType = function (el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
@@ -61,6 +64,7 @@ function typing() {
       ".typewrite > .wrap { border-right: 0.08em solid #fff; color: #fff;}";
     document.body.appendChild(css);
   };
+  isPlaying = undefined
 }
 
 function showBtn() {
@@ -77,6 +81,7 @@ function showBtn() {
 
 // 生日快樂亂飛
 function canvasAnimationStart() {
+  fireworkSound()
   // remove btn
   $("h1").remove();
 
@@ -177,6 +182,7 @@ function canvasAnimationStart() {
     }
   }
   setInterval(draw, 10);
+  isPlaying = undefined
 }
 
 // Big Word Array
@@ -241,10 +247,10 @@ const carouselTemplate = `
         <div class="flip-card-inner">
           <div class="flip-card-front d-flex p-5 flex-column justify-content-center">
             <div>
-              <img class="m-auto"  src="/img/cat-drumming.gif" style="width:419px;height:204px">
+              <img class="m-auto"  src="./img/cat-drumming.gif" style="width:419px;height:204px">
             </div>
             <div>
-              <img class="m-auto"  src="/img/rickroll.gif" style="width:340px;height:232px">
+              <img class="m-auto"  src="./img/rickroll.gif" style="width:340px;height:232px">
             </div>
           </div>
           <div class="flip-card-back d-flex p-5 flex-wrap justify-content-center">
@@ -382,6 +388,23 @@ function playSound() {
   if (!isPlaying) {
     audio.loop = true;
     audio.play();
+    isPlaying = true;
+  }
+};
+
+function typingSound() {
+  if (!isPlaying) {
+    // audioTyping.loop = true;
+    audioTyping.play();
+    isPlaying = true;
+  }
+};
+
+
+function fireworkSound() {
+  if (!isPlaying) {
+    // audioFirework.loop = true;
+    audioFirework.play();
     isPlaying = true;
   }
 };
